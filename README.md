@@ -60,8 +60,8 @@ seaborn>=0.11.0
 ## 📅 Timeline
 
 ### Phase 1 (Nov 10)
-- [x] Initial data collection
-- [x] Data preprocessing
+- [ ] Initial data collection
+- [ ] Data preprocessing
 - [ ] Exploratory analysis
 
 ### Phase 2 (Nov 17)
