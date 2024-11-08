@@ -84,36 +84,9 @@ seaborn>=0.11.0
 - [ ] Complete documentation
 - [ ] Code repository organization
 
-## 💻 Installation
+## ⚙️ Algorithms Used in Project⚙️⚙
+```Pseudo Code
 
-```bash
-# Clone the repository
-git clone https://github.com/yourusername/bloomington-housing-prediction.git
-
-# Navigate to project directory
-cd bloomington-housing-prediction
-
-# Create virtual environment
-python -m venv venv
-source venv/bin/activate  # On Windows: venv\Scripts\activate
-
-# Install dependencies
-pip install -r requirements.txt
-```
-
-## 🚀 Usage
-
-```python
-from housing_predictor import HousingModel
-
-# Initialize model
-model = HousingModel()
-
-# Train model
-model.train(data_path='path/to/data')
-
-# Make predictions
-predictions = model.predict(new_data)
 ```
 
 ## 📄 License
