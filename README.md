@@ -46,7 +46,7 @@ This project leverages neural networks to predict trends in the Bloomington hous
 - Hyperparameter optimization
 
 ## 🛠️ Technologies
-
+ 
 ```python
 # Core Dependencies
 tensorflow>=2.8.0
