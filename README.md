@@ -1,4 +1,4 @@
-# Neural Networks for Bloomington Housing Market Prediction
+# Neural Networks for California Housing Market Prediction
 
 <div align="center">
 
@@ -22,7 +22,7 @@
 
 ## 🎯 Overview
 
-This project leverages neural networks to predict trends in the Bloomington housing market. By analyzing factors such as location, economic indicators, and historical prices, we aim to create a robust prediction model to assist buyers, sellers, and investors in making informed decisions.
+This project leverages neural networks to predict trends in the California housing market. By analyzing factors such as location, economic indicators, and historical prices, we aim to create a robust prediction model to assist buyers, sellers, and investors in making informed decisions.
 
 ## 👥 Team
 | Name | Role | Email | GitHub |
@@ -56,6 +56,13 @@ scikit-learn>=1.0.0
 matplotlib>=3.4.0
 seaborn>=0.11.0
 ```
+
+## 💾 Training Data
+- Link: [https://www.kaggle.com/datasets/camnugent/california-housing-prices](https://www.kaggle.com/datasets/camnugent/california-housing-prices)
+- This data set is 20,000+ entries of data on the California housing market.  
+- This data set is an extensive repository of over 20,000+ data entries, offering valuable insights into the California housing market. Compiled with meticulous care, it serves as a comprehensive resource for researchers, analysts, and professionals in the real estate industry.
+- Encompassing a wide range of variables, this data set provides detailed information on latitude, longitude, housing median age, total bedrooms, population, households, median income, median house value, ocean proximity. 
+
 
 ## 📅 Timeline
 
