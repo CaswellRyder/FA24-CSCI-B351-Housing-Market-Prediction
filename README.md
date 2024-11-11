@@ -94,6 +94,8 @@ seaborn>=0.11.0
 ## ⚙️ Algorithms Used in Project⚙️⚙
 ```Pseudo Code
 
+Will update as we go
+
 ```
 
 ## 📄 License
