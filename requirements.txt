@@ -1,0 +1,6 @@
+
+scikit-learn==1.3.0  # For machine learning models like RandomForestRegressor
+pandas>=1.4.0        # For data manipulation (assumed based on typical usage in similar projects)
+numpy>=1.21.0  
+matplotlib # For numerical operations (assumed dependency for scikit-learn)
+jupyterlab==3.6.1
