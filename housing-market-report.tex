@@ -1,0 +1,349 @@
+\documentclass{article}
+\usepackage{graphicx} % Required for inserting images
+\usepackage{listings}
+\usepackage{xcolor}
+\usepackage{minted}
+\usepackage{url}
+\usepackage{latexsym}
+\usepackage{enumitem}
+\usepackage{titlesec}
+\usepackage[margin=1in]{geometry}
+\usepackage{hyperref}
+\usepackage{parskip}
+
+\title{\textbf{Housing Market Prediction}}
+\author{Ryder Caswell, Anshu Selvamani, Siddharth Ghantasala}
+\date{November-December 2024}
+
+\begin{document}
+
+\maketitle
+
+\section{Introduction}
+The primary goal of the project is to develop a predictive model for housing market trends in California, focusing on housing price prediction by analyzing about 20,000+ record data entries of California’s housing market from years past. This includes understanding the factors influencing housing prices and creating a system to make accurate and actionable predictions. 
+
+In the data set we are using, each entry records the location (longitude and latitude), median housing age, total rooms and bedrooms of each house, population of the area, median income per capita, median house value and each house’s distance from the ocean (Near bay, <1hr from ocean, Inland). 
+
+Certain constraints do exist that we have to take into consideration. The project is dependent on the quality and availability of datasets, particularly housing data and economic indicators. There is a need to balance prediction accuracy with model interpretability for decision-making. The project must align with computational resources, as some machine learning models can be resource intensive.  Furthermore, there are additional challenges we encounter. 
+
+Firstly, in terms of Data Acquisition and Preprocessing, we will have to work on Cleaning and preparing datasets, which may include handling missing values and removing outliers. 
+
+Secondly, ensuring datasets are diverse enough to capture various geographic and temporal housing market variations. 
+
+Thirdly, in terms of Feature Engineering, we need to identify key predictors of housing prices, such as location, amenities, and macroeconomic variables. Fourthly, Model Selection which requires choosing algorithms that suit the problem (e.g., regression models, tree-based models, or neural networks) and tuning their hyperparameters.  
+
+Finally, handling variations- accounting for external factors like economic policies, interest rates, and inflation, which impact housing markets differently across regions.
+
+\section{Techniques}
+We used two main algorithms for predicting housing prices in coming years based on previous years listings and statistics, namely Linear regression and Random Forest regression and compared their accuracy at predicting the housing market
+
+\subsection{Linear Regression}
+Linear regression is a method used in Artificial Intelligence where the program attempts to find a line with the best fit within a large set of data with one or more inputs and use that line to predict a certain value given a new set of inputs.
+There are two types of linear regression : simple linear regression which uses a single input (independent variable) and multiple linear regression which uses 2 or independent variables.
+
+In Linear Regression, all the data is plotted out on a hypothetical graph and a line of best fit is drawn at random on the graph with the equation 
+\begin{center} 
+\( y = b_0 + x \cdot b_1 \) 
+\end{center}
+Where \(x\) is the independent variable (input) and \(y\) is the dependent variable (output). And \(b_1\) and \(b_0\) are the slope and \(y\)-intercept.
+
+\begin{figure}
+    \centering
+    \includegraphics[width=0.5\linewidth]{1image.png}
+    \caption{In the above graph, the data follows a linear path because of which, the prices of future homes can be predicted to an acceptable degree of accuracy using a line of best fit. Where the line is \(b_0\), and how the line is tilted (\(b_1\)) for the most accurate prediction is discovered using linear regression.}
+    \label{fig:enter-label}
+\end{figure}
+ 
+In the above graph, the data follows a linear path because of which, the prices of future homes can be predicted to an acceptable degree of accuracy using a line of best fit. Where the line is ($b_0$), and how the line is tilted ($b_1$) for the most accurate prediction is discovered using linear regression. 
+
+Since the line drawn initially is random and inherently does not fit the data perfectly, the model is trained using the training data by iteratively checking the line with each data entry to see if it predicts the house price accurately and measuring a ‘loss’ if it doesn’t.
+
+The actual ‘loss’ of a prediction is essentially an estimate of how badly the line predicted the data. A higher loss implies that the line estimates the data very badly and vice versa. The loss of the model can be estimated using ‘loss functions’, such as the Mean Square Error function which is given by 
+\begin{center} 
+\((y_i - Y_i)^2\) 
+\end{center}
+Where \(y_i\) is the output predicted by the model and \(Y_i\) is the actual value of the output, and \(n\) is the number of data entries we are training with.
+
+The model then uses optimization functions such as Gradient Descent, Normal Equation (closed form solution), QR decomposition, Singular Value Decomposition etc. to minimize the output of the loss function by continuously modifying the values for $b_0$ and $b_1$ till the line fits the data as accurately as possible.
+
+\subsubsection{Limitations : }
+\paragraph{Linearity :} Linear regression assumes that the data we are plotting has a linear theme to it, therefore if the data is not linear, then linear regression cannot estimate the data accurately. Linear
+regression can’t estimate new values on graphs such as below
+ 
+\begin{figure}
+    \centering
+    \includegraphics[width=0.5\linewidth]{Graphthatcantbepredictedwithlinearregression.png}
+    \caption{As you can see, the red line (line of best fit) cannot accurately predict the values further to the right on the x axis. This is a data set that
+linear regression cannot be used on.
+}
+    \label{fig:enter-label}
+\end{figure}
+
+
+\paragraph{Independence :} All the data entries are assumed to be independent of each other when considering linear regression. Therefore, if some of the dependent variables (outputs) of a dataset are dependent on each other, linear regression cannot accurately predict that.
+
+\paragraph{Homoscedasticity :} If the data points on either side of the line graph lie a certain distance away from the line at most, then the dataset is said to be homoscedastic. If this distance tends to vary, the dataset is heteroscedastic, and linear regression cannot accurately predict the model. Fortunately, linear regression works well enough when predicting housing markets as the data from housing market datasets is usually  homoscedastic. 
+
+\begin{figure}
+    \centering
+    \includegraphics[width=1\linewidth]{HomoAndHeteroScedasticity.png}
+    \caption{}
+    \label{fig:enter-label}
+\end{figure}
+
+\subsubsection{Time and space complexity : }
+The time complexity of linear regression really depends on the optimization function. For example, for gradient descent, the time complexity is given by O(I*n*m) where m is the number of inputs, n is the number of data entries and I is the number of iterations the function is run and the space complexity is given by O(n*m).
+
+\subsection{Random Forest Regression}
+Random Forest regression is an ensemble learning technique which is a technique that combines predictions from multiple models to provide stable predictions.
+
+A random forest is an ensemble learning technique which involves the consolidation of all the data from numerous decision trees to make a decision. It is a supervised learning algorithm that can be used for regression or classification.
+
+A decision tree is essentially a flowchart consisting of nodes connected by branches in a cascading shape with no cycles, where the nodes correspond to a test or attribute, branches to outcomes and leaves to a continuous value/label i.e. classification. Each branch splits the data classified by the node it is pointing out of on the classification criteria of the node it leads to. Decision trees are very helpful in classifying data
+
+While a single decision tree can tend to have higher uncertainty and error, multiple decision trees used in parallel can offer lower variance as each decision tree gets perfectly trained on that sample data, and so the output doesn’t depend on one decision tree but on multiple decision trees.
+When in a regression application, the final output is the mean of all the outputs, and is called “Aggregation”.
+
+A technique used to train the model on these decision trees is known as bootstrapping, which involves generating a number of random samples from the dataset as large as the data set provided. The sampling is done with replacement, i.e. even if there are 100 records, 100 samples will be made from those records implying some entries will be repeated and some omitted. Each bootstrapped dataset is used to train each decision tree which will then split the data based on the independent variables, for example, 100 homes are split into subsets of 20, 30 and 50 homes based on distance from the sea (Near bay, <1hr from the sea and inland) and those homes are further divided into subsets of smaller classifications based on other independent variables. 
+After all the decision trees have classified all the homes into certain price ranges, the average of all the homes are taken via the process of aggregation and the final average is taken to be the final output
+
+It is possible to fix certain attributes of the sampling, for example, the distance from the sea can be fixed as inland and all homes that are <1hr away from the sea and near bay will be excluded making the sampling technique more specific and accurate. 
+
+Incorporating Bootstrap and Aggregation together in a technique known as Bagging (Bootstrap Aggregating) allows us to find an average median price of the housing market pricing range for future housing.
+
+\subsubsection{Limitations :}
+\paragraph{Complexity : }
+Training the model can tend to be more computationally expensive since each tree is trained separately and the training data, leaf splits and leaf node predictions must all be stored in each decision tree, which leads to more memory and power usage.
+\paragraph{Prediction time :} Random forest regression can tend to take more time to make predictions unlike other algorithms even though they are more accurate and effective as each observation must navigate through several decision trees in the forest.
+\paragraph{Lack of interpretability : }Also known as a ‘black box model’, Random forest regression can tend to be harder to understand the logic behind each prediction and the relationship between different independent variables.
+Overfitting : These models can tend to overfit by capturing noise in training data and prove to exhibit reduced performance on unseen instances.
+
+\subsubsection{Time and space complexity : }
+The time complexity of random forest regression is given by O(k’*n*log(n)*m) to train, O(m*k’) to test and the space complexity is O(k’*d), where n is the number of datapoints, m is the number of features or independent variables, k’ is the number of trees and d is the depth of each tree (or at least depth of deepest tree).
+
+\subsection{Alternatives}
+Some alternatives to Linear regression and Random forest regression include: 
+\begin{itemize}
+\item Polynomial regression (where the independent variables and dependent variables plot a curve of the nth degree and can be made in the form of a polynomial)
+
+\item Ridge regression (which accounts for multicollinearity i.e. when independent variables are highly dependent on each other using a shrinkage parameter)
+
+\item Bayesian regression (which uses probability models to estimate the unknown parameters of a model) 
+\end{itemize}
+
+\section{Classic AI/Thought Process- How the Solution Models Human Thought Processes}
+Pattern Recognition The machine learning models implemented in the project mimic the way humans identify patterns in data. For instance, humans consider factors like location, size, and neighborhood trends when assessing house prices. Similarly, models like Linear Regression and Random Forests analyze feature relationships and detect patterns in the provided datasets.
+Learning from Experience: The models use training data to adjust their parameters, akin to how humans refine judgments based on past experiences. Iterative training processes (e.g., gradient descent) parallel how humans might learn through trial and error.
+
+Handling Non-Linearity: When faced with complex relationships, humans use intuition or heuristic reasoning to assess multi-faceted scenarios. Algorithms like Decision Trees and Neural Networks replicate this by handling non-linear relationships and interactions among features.
+Simplification for Decision-Making: Humans often simplify complex data to focus on essential factors, a process mirrored by feature selection and dimensionality reduction techniques.
+
+Probabilistic Reasoning: Predictive models simulate the way humans account for uncertainty, making probabilistic predictions based on available data.
+Adaptability: By retraining on new data, the models adapt to changing conditions in the housing market, much like how humans revise their understanding based on new information.
+
+Here’s an example to further explain how the solution models human thought processes. Consider a human trying to predict housing prices. They might intuitively weigh features like proximity to amenities and the size of the property. The machine learning models in this repository automate this thought process, using feature weights (e.g., coefficients in regression) or splits in decision trees to represent human-like reasoning.
+
+\section{Results}
+The data obtained can be represented in multiple ways, such as this map denoting all the house plots across California and their median house value.  
+
+\begin{figure}
+    \centering
+    \includegraphics[width=0.5\linewidth]{CaliforniaHomesAndPrices.png}
+    \caption{From this we can see that the graph resembles the shape of California and the homes near the sea are of higher value than the inland houses. This is an outcome we predicted as seaside homes are definitely more sought after than inland homes.}
+    \label{fig:enter-label}
+\end{figure}
+
+We also have a heatmap to show the value of homes from a scale of -1 to 1 with regards to all the independent variables. 
+
+\begin{figure}
+    \centering
+    \includegraphics[width=0.8\linewidth]{HeatMap.png}
+    \caption{The following heatmap represents the ‘correlation’ coefficients between any two independent variables (such as distance from ocean, total rooms, total bedrooms, median house value, median income etc.) wherein a darker blue color indicates a positive correlation, i.e. leaning towards 1, negative correlations are depicted by yellower colors, i.e. leaning towards -1 and pairs with neutral or no correlation have more muted colors.
+}
+    \label{fig:enter-label}
+\end{figure}
+
+
+\subsection{Key Observations : }
+Strong positive correlations: Independent variables like total rooms, total bedrooms, population, and households are highly correlated with each other (dark blue cells).
+Negative correlations: longitude and ocean proximity NEAR BAY have a noticeable negative correlation (yellower cells).
+Median house value is positively correlated with median income (0.69), but weakly correlated with other features like total rooms and latitude.
+
+\subsection{What does this imply about the problem space?}
+The results from the code implemented in the housing market prediction model provide critical insights into the problem space. The correlation heatmap generated using sns.heatmap visualizes the relationships between features in the dataset, identifying which variables are most strongly correlated with the target variable, such as housing prices. This analysis helps prioritize features that are likely to have the most predictive power while revealing potential multicollinearity issues that may require preprocessing steps, such as feature selection or dimensionality reduction. 
+
+The dataset information retrieved through data.info() highlights the structure and quality of the data, including the presence of missing values, the types of variables, and whether any columns require conversion or encoding for compatibility with machine learning algorithms. 
+
+Finally, a preview of the dataset using data offers a qualitative understanding of the data’s composition, allowing for the identification of outliers or anomalies and assessing whether additional preprocessing is necessary. Collectively, these results establish a strong foundation for exploring the housing market prediction problem by ensuring data readiness and identifying relevant predictors.
+
+\subsection{Is this what we expected?}
+This is in fact more or less what was expected after building this model as it only stands to reason that more people implies more homes with more people in them, thereby increasing the value of the homes they inhabit. However, what was surprising is the strong negative correlation between household rooms and population as this directly contradicts the initial observation.
+
+\subsection{Testing}
+On testing the program using linear regression with our testing dataset, it was found that the model predicts the prices of homes up to an accuracy of 67.1\%, whereas, using random forest regression, the accuracy of jumped up to 82.5\%.
+
+\section{How the code snippets are used in the program?}
+
+\begin{minted}[bgcolor=lightgray!20, frame=lines, linenos]{python}
+import pandas as pd
+import numpy as np
+import matplotlib.pyplot as plt
+import seaborn as sns
+\end{minted}
+\begin{minted}[bgcolor=lightgray!20, frame=lines, linenos]{python}
+data = pd.read_csv("housing.csv")
+\end{minted}
+\begin{center}
+Importing the relevant python modules and reading the data from the dataset (which is in a csv file)
+\end{center}
+
+\begin{minted}[bgcolor=lightgray!20, frame=lines, linenos]{python}
+X_train, X_test, Y_train, Y_test = train_test_split(X, Y, 
+test_size=0.20)
+\end{minted}
+
+\begin{minted}[bgcolor=lightgray!20, frame=lines, linenos]{python}
+train_data = X_train.join(Y_train)
+\end{minted}
+
+\begin{center}Splitting the data into training and testing data sets. X contains the independent features of the dataset, while Y contains the target variable (median\_house\_value), which is being predicted. The dataset is split into training and testing sets using an 80/20 ratio with train\_test\_split. This ensures the model is trained on a subset of data and tested on unseen data. train\_data combines the X\_train features and their corresponding Y\_train values for preprocessing and analysis.
+\end{center}
+ 
+\begin{minted}[bgcolor=lightgray!20, frame=lines, linenos]{python}
+train_data.corr(numeric_only=True)
+\end{minted}
+
+\begin{center}
+Making sure the training data consists of only numeric values that the model can calculate with
+\end{center}
+
+ \begin{minted}[bgcolor=lightgray!20, frame=lines, linenos]{python}
+train_data['total_rooms'] = np.log(train_data['total_rooms'] + 1)
+train_data['total_bedrooms'] = np.log(train_data['total_bedrooms'] + 1)
+train_data['population'] = np.log(train_data['population'] + 1)
+train_data['households'] = np.log(train_data['households'] + 1)
+\end{minted}
+
+\begin{center}Logarithmic transformations are applied to numerical features to reduce skewness and normalize data. This is particularly useful for features with highly skewed distributions, like total rooms or population.
+\end{center}
+
+\begin{minted}[bgcolor=lightgray!20, frame=lines, linenos]{python}
+train_data['bedroom_ratio'] = train_data['total_bedrooms'] / train_data['total_rooms']
+train_data['household_rooms'] = train_data['total_rooms'] / train_data['households']
+
+plt.figure(figsize=(20, 10))
+sns.heatmap(train_data.corr(), annot=True, cmap="YlGnBu")
+\end{minted}
+
+\begin{center}Logarithmic transformations are applied to numerical features to reduce skewness and normalize data. Converging the total bedrooms and total rooms to bedroom ration, and total\_rooms and total\_households to household rooms
+\end{center}
+
+\begin{minted}[bgcolor=lightgray!20, frame=lines, linenos]{python}
+from sklearn.linear_model import LinearRegression
+from sklearn.preprocessing import StandardScaler
+
+scaler = StandardScaler()
+
+X_train, Y_train = train_data.drop(['median_house_value'], axis=1), train_data['median_house_value']
+X_train_s = scaler.fit_transform(X_train)
+
+reg = LinearRegression()
+
+reg.fit(X_train, Y_train)
+\end{minted}
+
+\begin{center}
+StandardScaler standardizes the dataset by scaling features to have zero mean and unit variance. This step is necessary for models like Linear Regression that are sensitive to feature scaling.
+\end{center}
+
+
+\begin{minted}[bgcolor=lightgray!20, frame=lines, linenos]{python}
+test_data = X_test.join(Y_test)
+
+test_data['total_rooms'] = np.log(test_data['total_rooms'] + 1)
+test_data['total_bedrooms'] = np.log(test_data['total_bedrooms'] + 1)
+test_data['population'] = np.log(test_data['population'] + 1)
+test_data['households'] = np.log(test_data['households'] + 1)
+
+# Perform one-hot encoding for the "ocean_proximity" column for the test data
+test_data = pd.get_dummies(test_data, columns=["ocean_proximity"], drop_first=False)
+
+test_data['bedroom_ratio'] = test_data['total_bedrooms'] / test_data['total_rooms']
+test_data['household_rooms'] = test_data['total_rooms'] / test_data['households']
+\end{minted}
+
+\begin{center}Categorical variables, like ocean\_proximity, are converted into numerical format using one-hot encoding. This allows machine learning models to process categorical data effectively. New features (bedroom\_ratio and household\_rooms) are created to provide additional insights into relationships between variables. These ratios may be more predictive of housing values than the raw numbers.
+\end{center}
+
+
+\begin{minted}[bgcolor=lightgray!20, frame=lines, linenos]{python}
+reg.score(X_test, Y_test)
+\end{minted}
+ 
+\begin{center}
+The model’s performance is evaluated using the .score() method, which computes the coefficient of determination (R² score) on the test data. This indicates how well the model predicts the target variable. The Linear Regression model scored a 67.12\%.
+\end{center}
+
+\begin{minted}[bgcolor=lightgray!20, frame=lines, linenos]{python}
+from sklearn.ensemble import RandomForestRegressor
+
+forest = RandomForestRegressor()
+
+forest.fit(X_train, Y_train)
+\end{minted}
+ 
+\begin{center}`RandomForestRegressor` is another predictive model that uses an ensemble of decision trees. It is trained on the original (non-scaled) data.
+\end{center}
+
+
+\begin{minted}[bgcolor=lightgray!20, frame=lines, linenos]{python}
+forest.score(X_test, Y_test)
+\end{minted}
+
+\begin{center}Evaluates the Random Forest model’s performance on the test dataset. Random Forest typically handles raw data better than linear models, as evident in higher scores.
+\end{center}
+
+\section{Conclusion}
+Overall, we feel like the model could be modified in the future further, wherein we change the number of independent variables, change the weights, the size of training and testing datasets, using different optimization methods such as gradient descent, QR decomposition rather than the normal equation, and different cost functions such as mean absolute error or root mean square error or hinge error rather than Mean Squared Error.
+
+Different methods to predict housing could be used as well such as neural networks, polynomial regression, Support Vector Machines or other classification algorithms to more accurately define and classify data to better predict future house values. 
+
+Along the way, we learnt 4 main lessons. Firstly, Importance of Data Quality- the effectiveness of machine learning models heavily depends on the quality and completeness of the data used. Missing values and outliers can significantly impact predictions. 
+
+Secondly, Trade-offs in Model Complexity: while complex models may perform better, they are harder to interpret and require more resources. Simple models like Linear Regression, though less accurate, are more interpretable and faster to train. 
+
+Thirdly, Feature Importance: identifying key predictors (e.g., location, square footage) is as critical as the choice of algorithms, as it aligns with how humans assess property values. 
+
+Lastly, Scalability Challenges: larger datasets require efficient data pre-processing pipelines and scalable computational solutions, such as using cloud-based platforms.
+
+\section{Sources}
+\begin{itemize}
+    \item \href{https://www.geeksforgeeks.org/ml-linear-regression/}{https://www.geeksforgeeks.org/ml-linear-regression/}
+    \item \href{https://www.geeksforgeeks.org/random-forest-regression-in-python/}{https://www.geeksforgeeks.org/random-forest-regression-in-python/}
+    \item \href{https://cs50.harvard.edu/ai/2024/weeks/4/}{https://cs50.harvard.edu/ai/2024/weeks/4/}
+    \item \href{https://www.geeksforgeeks.org/what-are-the-advantages-and-disadvantages-of-random-forest/}{https://www.geeksforgeeks.org/what-are-the-advantages-and-disadvantages-of-random-forest/}
+    \item \href{https://corporatefinanceinstitute.com/resources/data-science/bagging-bootstrap-aggregation/}{https://corporatefinanceinstitute.com/resources/data-science/bagging-bootstrap-aggregation/}
+    \item \href{https://en.wikipedia.org/wiki/Bayesian_linear_regression}{https://en.wikipedia.org/wiki/Bayesian\_linear\_regression}
+    \item \href{https://en.wikipedia.org/wiki/Random_forest}{https://en.wikipedia.org/wiki/Random\_forest}
+    \item \href{https://www.geeksforgeeks.org/decision-tree/}{https://www.geeksforgeeks.org/decision-tree/}
+\end{itemize}
+
+\section{Code:}
+\begin{itemize}
+    \item \href{https://pandas.pydata.org/docs/reference/index.html#api}{https://pandas.pydata.org/docs/reference/index.html\#api}
+    \item \href{https://numpy.org/doc/stable/user/index.html#user}{https://numpy.org/doc/stable/user/index.html\#user}
+    \item \href{https://numpy.org/doc/stable/reference/index.html#reference}{https://numpy.org/doc/stable/reference/index.html\#reference}
+    \item \href{https://seaborn.pydata.org/api.html}{https://seaborn.pydata.org/api.html}
+    \item \href{https://seaborn.pydata.org/tutorial.html}{https://seaborn.pydata.org/tutorial.html}
+    \item \href{https://seaborn.pydata.org/examples/index.html#}{https://seaborn.pydata.org/examples/index.html\#}
+    \item \href{https://matplotlib.org/stable/users/index.html}{https://matplotlib.org/stable/users/index.html}
+    \item \href{https://matplotlib.org/stable/tutorials/index.html}{https://matplotlib.org/stable/tutorials/index.html}
+    \item \href{https://matplotlib.org/stable/api/index.html}{https://matplotlib.org/stable/api/index.html}
+\end{itemize}
+
+\section{Data:}
+\begin{itemize}
+    \item \href{https://www.kaggle.com/datasets/camnugent/california-housing-prices}{https://www.kaggle.com/datasets/camnugent/california-housing-prices}
+\end{itemize}
+
+\end{document}
