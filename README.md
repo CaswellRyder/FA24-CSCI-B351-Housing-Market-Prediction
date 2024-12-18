@@ -14,16 +14,16 @@
 </div>
 
 ## 📋 Table of Contents
-- [Overview](#🎯-overview)
-- [Team](#👥-team)
+- [Overview](#overview)
+- [Team](#team)
 - [Features](#features)
 - [Installation](#installation)
 - [Usage](#usage)
 - [Project Structure](#project-structure)
-- [Technologies](#🛠️-technologies)
-- [Training Data](#💾-training)
-- [Sources](#📚-sources)
-- [License](#📄-license)
+- [Technologies](#technologies)
+- [Training Data](#training)
+- [Sources](#sources)
+- [License](#license)
 
 ## Overview
 The Housing Market Prediction project leverages machine learning to estimate the current and future value of homes based on address data, with a focus on the Bloomington, Indiana housing market. This project uses data preprocessing, feature engineering, and prediction models to achieve accurate results.
