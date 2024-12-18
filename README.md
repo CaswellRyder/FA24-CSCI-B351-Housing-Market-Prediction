@@ -25,7 +25,7 @@ The Housing Market Prediction project leverages machine learning to estimate the
 
 ## 👥 Team
 | Name | Email | GitHub |
-|------|------|-------|---------|
+|------|-------|---------|
 | Ryder Caswell | [rcaswel@iu.edu](mailto:rcaswel@iu.edu) | [@CaswellRyder](https://github.com/CaswellRyder) |
 | Anshu Roja Selvamani | [arojasel@iu.edu](mailto:arojasel@iu.edu) | [@arojasel](https://github.com/arojasel) |
 | Sid Ghantasala | [sghantas@iu.edu](mailto:sghantas@iu.edu) | [@SidVeins2027](https://github.com/SidVeins2027) |
