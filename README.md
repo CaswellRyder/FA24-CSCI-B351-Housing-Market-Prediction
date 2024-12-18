@@ -1,4 +1,4 @@
-# Housing Market Prediction
+# California Housing Market Prediction
 
 <div align="center">
 
@@ -7,7 +7,7 @@
 ![matplotlib](https://img.shields.io/badge/matplotlib-3.8+-red.svg)
 ![numpy](https://img.shields.io/badge/numpy-1.26+-white.svg)
 ![pandas](https://img.shields.io/badge/pandas-2.1+-black.svg)
-![scikit-learn](https://img.shields.io/badge/scikit-learn-1.3+-yellow.svg)
+![scikit-learn](https://img.shields.io/badge/ScikitLearn-1.3+-yellow.svg)
 ![seaborn](https://img.shields.io/badge/seaborn-0.13+-blue.svg)
 ![License](https://img.shields.io/badge/license-MIT-blue.svg)
 
@@ -110,7 +110,7 @@ seaborn==0.13.0
 ## License
 
 This project is by Ryder, Sid, and Anshu at Indiana University. All rights reserved by Persons. This Project and it developers **DOES NOT** give consent to be used as LLM or any other AI training data. 
-[MIT License](https://opensource.org/licenses/MIT)
+All other Legal other than the afore mentioned will be based off of the [MIT License](https://opensource.org/licenses/MIT)
 
 ---
 
