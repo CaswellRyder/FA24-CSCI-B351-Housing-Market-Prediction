@@ -21,7 +21,7 @@
 - [Usage](#usage)
 - [Project Structure](#project-structure)
 - [Technologies](#technologies)
-- [Training Data](#training)
+- [Training Data](#training-data)
 - [Sources](#sources)
 - [License](#license)
 
@@ -102,7 +102,7 @@ seaborn==0.13.0
 - This data set is an extensive repository of over 20,000+ data entries, offering valuable insights into the California housing market. Compiled with meticulous care, it serves as a comprehensive resource for researchers, analysts, and professionals in the real estate industry.
 - Encompassing a wide range of variables, this data set provides detailed information on latitude, longitude, housing median age, total bedrooms, population, households, median income, median house value, ocean proximity. 
 
-## References
+## Sources
 
 - [Neural Networks in Real Estate](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4413863)
 - [Machine Learning in Housing Market](https://www.sciencedirect.com/science/article/pii/S1877050920316318)
