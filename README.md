@@ -14,16 +14,16 @@
 </div>
 
 ## 📋 Table of Contents
-- [Overview](#overview)
-- [Team](#team)
+- [Overview](#🎯-overview)
+- [Team](#👥-team)
 - [Features](#features)
 - [Installation](#installation)
 - [Usage](#usage)
-- [Project Structure](#project)
-- [Technologies](#technologies)
-- [Training Data](#training)
-- [Sources](#sources)
-- [License](#license)
+- [Project Structure](#project-structure)
+- [Technologies](#🛠️-technologies)
+- [Training Data](#💾-training)
+- [Sources](#📚-sources)
+- [License](#📄-license)
 
 ## 🎯 Overview
 The Housing Market Prediction project leverages machine learning to estimate the current and future value of homes based on address data, with a focus on the Bloomington, Indiana housing market. This project uses data preprocessing, feature engineering, and prediction models to achieve accurate results.
@@ -102,16 +102,15 @@ seaborn==0.13.0
 - This data set is an extensive repository of over 20,000+ data entries, offering valuable insights into the California housing market. Compiled with meticulous care, it serves as a comprehensive resource for researchers, analysts, and professionals in the real estate industry.
 - Encompassing a wide range of variables, this data set provides detailed information on latitude, longitude, housing median age, total bedrooms, population, households, median income, median house value, ocean proximity. 
 
+## 📚 References
+
+- [Neural Networks in Real Estate](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4413863)
+- [Machine Learning in Housing Market](https://www.sciencedirect.com/science/article/pii/S1877050920316318)
 
 ## 📄 License
 
 This project is by Ryder, Sid, and Anshu at Indiana University. All rights reserved by Persons. This Project and it developers **DOES NOT** give consent to be used as LLM or any other AI training data. 
 [MIT License](https://opensource.org/licenses/MIT)
-
-## 📚 References
-
-- [Neural Networks in Real Estate](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4413863)
-- [Machine Learning in Housing Market](https://www.sciencedirect.com/science/article/pii/S1877050920316318)
 
 ---
 
