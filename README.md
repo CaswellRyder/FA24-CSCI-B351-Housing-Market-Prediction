@@ -29,7 +29,7 @@ The Housing Market Prediction project leverages machine learning to estimate the
    pip install -r requirements.txt
    ```
 
-4. (Optional) Install Jupyter Notebook if using notebooks:
+4. (Optional) Install Jupyter Notebook if using notebooks (You can also just use VS Code if you already have and use or prefer it.):
    ```bash
    pip install jupyter
    ```
@@ -42,9 +42,9 @@ The Housing Market Prediction project leverages machine learning to estimate the
    ```bash
    python main.py
    ```
-4. (Optional) Launch Jupyter Notebook for interactive data analysis:
+4. (Optional) Launch Jupyter Notebook for interactive data analysis (You can also just use VS Code if you already have and use or prefer it.):
    ```bash
-   jupyter notebook
+   jupyter lab
    ```
 
 ## Project Structure
@@ -53,9 +53,6 @@ The Housing Market Prediction project leverages machine learning to estimate the
 - `data/`: Directory for raw and processed datasets.
 - `requirements.txt`: Python dependencies for the project.
 - `README.md`: Documentation for the project.
-
-## Contributing
-Contributions are welcome! Please create a pull request with detailed descriptions of your changes.
 
 ## License
 [MIT License](https://opensource.org/licenses/MIT)
