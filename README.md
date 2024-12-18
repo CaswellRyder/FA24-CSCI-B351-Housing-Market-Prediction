@@ -115,5 +115,5 @@ All other Legal other than the afore mentioned will be based off of the [MIT Lic
 ---
 
 <div align="center">
-Made with ❤️ at Indiana University
+Made with ☕️ at Indiana University
 </div>
