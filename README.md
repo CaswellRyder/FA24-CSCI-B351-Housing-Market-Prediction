@@ -5,11 +5,11 @@
 ![Python](https://img.shields.io/badge/python-v3.12+-blue.svg)
 ![JupyterLabs](https://img.shields.io/badge/jupyterlab-4.2+-orange.svg)
 ![matplotlib](https://img.shields.io/badge/matplotlib-3.8+-red.svg)
-![numpy](https://img.shields.io/badge/numpy-1.26+-white.svg)
+![numpy](https://img.shields.io/badge/numpy-1.26+-blue.svg)
 ![pandas](https://img.shields.io/badge/pandas-2.1+-black.svg)
 ![scikit-learn](https://img.shields.io/badge/ScikitLearn-1.3+-yellow.svg)
 ![seaborn](https://img.shields.io/badge/seaborn-0.13+-blue.svg)
-![License](https://img.shields.io/badge/license-MIT-blue.svg)
+![License](https://img.shields.io/badge/license-MIT-red.svg)
 
 </div>
 
