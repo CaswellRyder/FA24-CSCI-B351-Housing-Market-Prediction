@@ -25,17 +25,17 @@
 - [Sources](#📚-sources)
 - [License](#📄-license)
 
-## 🎯 Overview
+## Overview
 The Housing Market Prediction project leverages machine learning to estimate the current and future value of homes based on address data, with a focus on the Bloomington, Indiana housing market. This project uses data preprocessing, feature engineering, and prediction models to achieve accurate results.
 
-## 👥 Team
+## Team
 | Name | Email | GitHub |
 |------|-------|---------|
 | Ryder Caswell | [rcaswel@iu.edu](mailto:rcaswel@iu.edu) | [@CaswellRyder](https://github.com/CaswellRyder) |
 | Anshu Roja Selvamani | [arojasel@iu.edu](mailto:arojasel@iu.edu) | [@arojasel](https://github.com/arojasel) |
 | Sid Ghantasala | [sghantas@iu.edu](mailto:sghantas@iu.edu) | [@SidVeins2027](https://github.com/SidVeins2027) |
 
-## ✨ Features
+## Features
 - Data preprocessing for clean input
 - Feature engineering specific to real estate data
 - Model training and evaluation for price prediction
@@ -84,7 +84,7 @@ The Housing Market Prediction project leverages machine learning to estimate the
 - `requirements.txt`: Python dependencies for the project.
 - `README.md`: Documentation for the project.
 
-## 🛠️ Technologies
+## Technologies
 
 ```python
 # Core Dependencies
@@ -96,18 +96,18 @@ scikit-learn==1.3.2
 seaborn==0.13.0
 ```
 
-## 💾 Training Data
+## Training Data
 - Link: [https://www.kaggle.com/datasets/camnugent/california-housing-prices](https://www.kaggle.com/datasets/camnugent/california-housing-prices)
 - This data set is 20,000+ entries of data on the California housing market.  
 - This data set is an extensive repository of over 20,000+ data entries, offering valuable insights into the California housing market. Compiled with meticulous care, it serves as a comprehensive resource for researchers, analysts, and professionals in the real estate industry.
 - Encompassing a wide range of variables, this data set provides detailed information on latitude, longitude, housing median age, total bedrooms, population, households, median income, median house value, ocean proximity. 
 
-## 📚 References
+## References
 
 - [Neural Networks in Real Estate](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4413863)
 - [Machine Learning in Housing Market](https://www.sciencedirect.com/science/article/pii/S1877050920316318)
 
-## 📄 License
+## License
 
 This project is by Ryder, Sid, and Anshu at Indiana University. All rights reserved by Persons. This Project and it developers **DOES NOT** give consent to be used as LLM or any other AI training data. 
 [MIT License](https://opensource.org/licenses/MIT)
