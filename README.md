@@ -3,8 +3,12 @@
 <div align="center">
 
 ![Python](https://img.shields.io/badge/python-v3.12+-blue.svg)
-![TensorFlow](https://img.shields.io/badge/TensorFlow-2.16+-orange.svg)
-![Contributions welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg)
+![JupyterLabs](https://img.shields.io/badge/jupyterlab-4.2+-orange.svg)
+![matplotlib](https://img.shields.io/badge/matplotlib-3.8+-red.svg)
+![numpy](https://img.shields.io/badge/numpy-1.26+-white.svg)
+![pandas](https://img.shields.io/badge/pandas-2.1+-black.svg)
+![scikit-learn](https://img.shields.io/badge/scikit-learn-1.3+-yellow.svg)
+![seaborn](https://img.shields.io/badge/seaborn-0.13+-blue.svg)
 ![License](https://img.shields.io/badge/license-MIT-blue.svg)
 
 </div>
@@ -13,11 +17,12 @@
 - [Overview](#overview)
 - [Team](#team)
 - [Features](#features)
-- [Technologies](#technologies)
-- [Timeline](#timeline)
 - [Installation](#installation)
 - [Usage](#usage)
-- [Contributing](#contributing)
+- [Project Structure](#project)
+- [Technologies](#technologies)
+- [Training Data](#training)
+- [Sources](#sources)
 - [License](#license)
 
 ## 🎯 Overview
