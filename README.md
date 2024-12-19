@@ -106,6 +106,30 @@ seaborn==0.13.0
 
 - [Neural Networks in Real Estate](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4413863)
 - [Machine Learning in Housing Market](https://www.sciencedirect.com/science/article/pii/S1877050920316318)
+- [https://www.geeksforgeeks.org/ml-linear-regression/](https://www.geeksforgeeks.org/ml-linear-regression/)
+- [https://www.geeksforgeeks.org/random-forest-regression-in-python/](https://www.geeksforgeeks.org/random-forest-regression-in-python/)
+- [https://cs50.harvard.edu/ai/2024/weeks/4/](https://cs50.harvard.edu/ai/2024/weeks/4/)
+- [https://www.geeksforgeeks.org/what-are-the-advantages-and-disadvantages-of-random-forest/](https://www.geeksforgeeks.org/what-are-the-advantages-and-disadvantages-of-random-forest/)
+- [https://corporatefinanceinstitute.com/resources/data-science/bagging-bootstrap-aggregation/](https://corporatefinanceinstitute.com/resources/data-science/bagging-bootstrap-aggregation/)
+- [https://en.wikipedia.org/wiki/Bayesian_linear_regression](https://en.wikipedia.org/wiki/Bayesian\_linear\_regression)
+- [https://en.wikipedia.org/wiki/Random_forest](https://en.wikipedia.org/wiki/Random\_forest)
+- [https://www.geeksforgeeks.org/decision-tree/](https://www.geeksforgeeks.org/decision-tree/)
+
+### Code:
+
+- [https://pandas.pydata.org/docs/reference/index.html#api](https://pandas.pydata.org/docs/reference/index.html\#api)
+- [https://numpy.org/doc/stable/user/index.html#user](https://numpy.org/doc/stable/user/index.html\#user)
+- [https://numpy.org/doc/stable/reference/index.html#reference](https://numpy.org/doc/stable/reference/index.html\#reference)
+- [https://seaborn.pydata.org/api.html](https://seaborn.pydata.org/api.html)
+- [https://seaborn.pydata.org/tutorial.html](https://seaborn.pydata.org/tutorial.html)
+- [https://seaborn.pydata.org/examples/index.html#](https://seaborn.pydata.org/examples/index.html\#)
+- [https://matplotlib.org/stable/users/index.html](https://matplotlib.org/stable/users/index.html)
+- [https://matplotlib.org/stable/tutorials/index.html](https://matplotlib.org/stable/tutorials/index.html)
+- [https://matplotlib.org/stable/api/index.html](https://matplotlib.org/stable/api/index.html)
+
+### Data
+
+- [https://www.kaggle.com/datasets/camnugent/california-housing-prices](https://www.kaggle.com/datasets/camnugent/california-housing-prices)
 
 ## License
 
